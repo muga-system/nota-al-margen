@@ -1,0 +1,76 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="es-AR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Nota al Margen | MUGA.dev</title>
+
+    <meta name="description"
+        content="Aplicación web en HTML, CSS y JavaScript vanilla para leer un artículo en Markdown y guardar notas locales en el navegador." />
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/main.js" type="module" defer></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <p class="site-kicker">MUGA.dev / Vanilla Web</p>
+        <h1>Nota al Margen</h1>
+        <p class="site-description">
+            Lectura en Markdown con notas locales persistentes en el navegador.
+        </p>
+    </header>
+
+    <main class="app-layout">
+        <article class="article-panel" aria-labelledby="article-title">
+            <header class="article-header">
+                <p class="article-label">Artículo</p>
+                <h2 id="article-title">Cargando artículo...</h2>
+            </header>
+
+            <div id="articleContent" class="article-content">
+                <p>El contenido del artículo se cargará desde Markdown.</p>
+            </div>
+        </article>
+
+        <aside class="notes-panel" aria-labelledby="notes-title">
+            <header class="notes-header">
+                <p class="notes-label">Notas locales</p>
+                <h2 id="notes-title">Notas al margen</h2>
+                <p id="notesCounter" class="notes-counter">0 notas guardadas</p>
+            </header>
+
+            <form id="noteForm" class="note-form">
+                <label for="noteInput">Nueva nota</label>
+
+                <textarea id="noteInput" name="note" rows="6" placeholder="Escribí una observación sobre la lectura..."
+                    required></textarea>
+
+                <button type="submit">Guardar nota</button>
+            </form>
+
+            <section class="notes-list-section" aria-labelledby="saved-notes-title">
+                <div class="notes-list-header">
+                    <h3 id="saved-notes-title">Notas guardadas</h3>
+                    <button id="clearNotesButton" type="button">
+                        Borrar todas
+                    </button>
+                </div>
+
+                <ul id="notesList" class="notes-list">
+                    <li class="empty-state">Todavía no hay notas guardadas.</li>
+                </ul>
+            </section>
+        </aside>
+    </main>
+
+    <footer class="site-footer">
+        <p>Proyecto desarrollado como parte de MUGA.dev.</p>
+    </footer>
+</body>
+
+</html>
