@@ -68,6 +68,29 @@
         </aside>
     </main>
 
+    <dialog id="clearNotesDialog" class="confirm-dialog">
+        <div class="confirm-dialog-content">
+            <p class="confirm-dialog-label">Acción destructiva</p>
+
+            <h2>¿Borrar todas las notas?</h2>
+
+            <p>
+                Esta acción va a eliminar todas las notas guardadas en este navegador.
+                No se puede deshacer.
+            </p>
+
+            <div class="confirm-dialog-actions">
+                <button id="cancelClearNotesButton" type="button">
+                    Cancelar
+                </button>
+
+                <button id="confirmClearNotesButton" type="button">
+                    Borrar notas
+                </button>
+            </div>
+        </div>
+    </dialog>
+
     <footer class="site-footer">
         <p>Proyecto desarrollado como parte de MUGA.dev.</p>
     </footer>
