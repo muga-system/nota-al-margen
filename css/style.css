@@ -343,3 +343,71 @@ button:disabled:hover {
     color: var(--color-accent);
     background: transparent;
 }
+
+
+/* Confirmation dialog */
+
+.confirm-dialog {
+    width: min(calc(100% - 2rem), 420px);
+    border: 1px solid var(--color-border);
+    padding: 0;
+    background: var(--color-surface);
+    color: var(--color-text);
+}
+
+.confirm-dialog::backdrop {
+    background: rgb(0 0 0 / 0.72);
+}
+
+.confirm-dialog-content {
+    padding: var(--space-lg);
+}
+
+.confirm-dialog-label {
+    margin: 0 0 var(--space-xs);
+    color: var(--color-accent);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.confirm-dialog h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+}
+
+.confirm-dialog p {
+    margin: var(--space-md) 0 0;
+    color: var(--color-muted);
+}
+
+.confirm-dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--space-sm);
+    margin-top: var(--space-lg);
+}
+
+.confirm-dialog-actions button {
+    border: 1px solid var(--color-border);
+    padding: var(--space-sm) var(--space-md);
+    background: transparent;
+    color: var(--color-text);
+}
+
+#cancelClearNotesButton:hover {
+    border-color: var(--color-text);
+}
+
+#confirmClearNotesButton {
+    border-color: var(--color-accent);
+    background: var(--color-accent);
+    color: #ffffff;
+}
+
+#confirmClearNotesButton:hover {
+    border-color: var(--color-text);
+}
