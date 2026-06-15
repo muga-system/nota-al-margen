@@ -10,7 +10,6 @@ El formato sigue una estructura simple basada en versiones y cambios agrupados p
 
 ### Planned
 
-* Preparar deploy público.
 * Preparar publicación técnica para LinkedIn.
 
 ## [0.2.0] - 2026-06-15
@@ -27,6 +26,8 @@ El formato sigue una estructura simple basada en versiones y cambios agrupados p
 * Modal de confirmación antes de borrar todas las notas.
 * Presentación visual para notas guardadas.
 * Estilos para acciones individuales de cada nota.
+* Deploy público mediante GitHub Pages.
+* Verificación funcional en desktop y mobile.
 
 ### Changed
 

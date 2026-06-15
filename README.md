@@ -6,6 +6,15 @@ Aplicación web desarrollada con HTML, CSS y JavaScript vanilla para leer un art
 
 Este proyecto forma parte de MUGA.dev y funciona como una pieza pequeña, clara y documentada para practicar desarrollo web tradicional sin frameworks ni automatizaciones innecesarias.
 
+## Demo
+
+La aplicación está publicada en GitHub Pages:
+
+```text
+https://muga-system.github.io/nota-al-margen/
+```
+
+
 ## Objetivo
 
 Construir una interfaz simple donde una persona pueda:
@@ -98,6 +107,9 @@ El proyecto ya cuenta con una primera versión funcional:
 * carga de contenido Markdown;
 * creación y persistencia de notas;
 * eliminación individual y total de notas.
+* deploy público activo en GitHub Pages;
+* prueba funcional realizada en desktop y mobile.
+
 
 ## Próximos pasos posibles
 
