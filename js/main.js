@@ -12,6 +12,12 @@ const notesList = document.querySelector("#notesList");
 const notesCounter = document.querySelector("#notesCounter");
 const clearNotesButton = document.querySelector("#clearNotesButton");
 
+const clearNotesDialog = document.querySelector("#clearNotesDialog");
+const cancelClearNotesButton = document.querySelector("#cancelClearNotesButton");
+const confirmClearNotesButton = document.querySelector(
+    "#confirmClearNotesButton"
+);
+
 document.addEventListener("DOMContentLoaded", init);
 
 async function init() {
@@ -21,6 +27,9 @@ async function init() {
     noteForm.addEventListener("submit", handleNoteSubmit);
     notesList.addEventListener("click", handleNotesListClick);
     clearNotesButton.addEventListener("click", handleClearNotes);
+    cancelClearNotesButton.addEventListener("click", handleCancelClearNotes);
+    confirmClearNotesButton.addEventListener("click", handleConfirmClearNotes);
+    clearNotesDialog.addEventListener("click", handleDialogBackdropClick);
 }
 
 async function loadArticle() {
@@ -136,8 +145,25 @@ function handleClearNotes() {
         return;
     }
 
+    clearNotesDialog.showModal();
+}
+
+function handleCancelClearNotes() {
+    clearNotesDialog.close();
+}
+
+function handleConfirmClearNotes() {
     localStorage.removeItem(NOTES_STORAGE_KEY);
     renderNotes();
+    clearNotesDialog.close();
+}
+
+function handleDialogBackdropClick(event) {
+    if (event.target !== clearNotesDialog) {
+        return;
+    }
+
+    clearNotesDialog.close();
 }
 
 function getStoredNotes() {
