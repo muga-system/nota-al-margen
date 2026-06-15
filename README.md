@@ -42,7 +42,7 @@ El proyecto se construye desde cero con tecnologías base de la web:
 * Persistencia de notas en el navegador.
 * Contador de notas guardadas.
 * Eliminación individual de notas.
-* Borrado completo de notas.
+* Borrado completo de notas con modal de confirmación.
 * Interfaz responsive.
 * Sistema visual oscuro con variables CSS.
 
@@ -103,6 +103,5 @@ El proyecto ya cuenta con una primera versión funcional:
 
 * Mejorar el parser Markdown.
 * Agregar estado visual para errores.
-* Agregar confirmación antes de borrar todas las notas.
 * Preparar deploy público.
 * Escribir una publicación técnica para LinkedIn.

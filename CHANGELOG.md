@@ -10,7 +10,6 @@ El formato sigue una estructura simple basada en versiones y cambios agrupados p
 
 ### Planned
 
-* Mejorar confirmación antes de borrar todas las notas.
 * Preparar deploy público.
 * Preparar publicación técnica para LinkedIn.
 
@@ -25,6 +24,7 @@ El formato sigue una estructura simple basada en versiones y cambios agrupados p
 * Contador de notas guardadas.
 * Eliminación individual de notas.
 * Borrado completo de notas.
+* Modal de confirmación antes de borrar todas las notas.
 * Presentación visual para notas guardadas.
 * Estilos para acciones individuales de cada nota.
 
