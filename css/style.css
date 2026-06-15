@@ -18,8 +18,7 @@
     --space-lg: 1.5rem;
     --space-xl: 2rem;
     --space-2xl: 4rem;
-
-    --max-with: 1180px
+    --max-width: 1180px
 }
 
 * {
@@ -46,12 +45,12 @@ button {
 
 .site-header,
 .site-footer {
-    width: min(100% - 2rem, var(--max-with));
+    width: min(calc(100% - 2rem), var(--max-width));
     margin-inline: auto;
 }
 
 .site-header {
-    padding-block: var(--space-2xl) var(--max-with);
+    padding-block: var(--space-2xl) var(--max-width);
     margin-inline: auto;
 }
 
@@ -89,7 +88,7 @@ button {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 360px;
     gap: var(--space-xl);
-    width: min(100% - 2rem, var(--max-width));
+    width: min(calc(100% - 2rem), var(--max-width));
     margin-inline: auto;
     padding-block: var(--space-xl);
 }
@@ -261,4 +260,31 @@ button {
         align-items: stretch;
         flex-direction: column;
     }
+}
+
+.article-content h3 {
+    margin: var(--space-lg) 0 var(--space-md);
+    font-size: 1.35rem;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+.article-content ul {
+    display: grid;
+    gap: var(--space-xs);
+    margin: 0 0 var(--space-lg);
+    padding-left: 1.25rem;
+}
+
+.article-content li {
+    padding-left: var(--space-xs);
+}
+
+.article-content code {
+    display: inline-block;
+    border: 1px solid var(--color-border);
+    padding: 0.05rem 0.35rem;
+    background: var(--color-background);
+    color: var(--color-accent);
+    font-size: 0.95em;
 }
