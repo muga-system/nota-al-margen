@@ -19,6 +19,7 @@ async function init() {
     renderNotes();
 
     noteForm.addEventListener("submit", handleNoteSubmit);
+    notesList.addEventListener("click", handleNotesListClick);
     clearNotesButton.addEventListener("click", handleClearNotes);
 }
 
@@ -116,6 +117,18 @@ function handleNoteSubmit(event) {
     noteInput.focus();
 }
 
+function handleNotesListClick(event) {
+    const deleteButton = event.target.closest("[data-note-delete]");
+
+    if (!deleteButton) {
+        return;
+    }
+
+    const noteId = deleteButton.dataset.noteDelete;
+
+    deleteNote(noteId);
+}
+
 function handleClearNotes() {
     const notes = getStoredNotes();
 
@@ -146,6 +159,14 @@ function saveNotes(notes) {
     localStorage.setItem(NOTES_STORAGE_KEY, JSON.stringify(notes));
 }
 
+function deleteNote(noteId) {
+    const notes = getStoredNotes();
+    const updatedNotes = notes.filter((note) => note.id !== noteId);
+
+    saveNotes(updatedNotes);
+    renderNotes();
+}
+
 function renderNotes() {
     const notes = getStoredNotes();
 
@@ -170,12 +191,22 @@ function renderNotes() {
         noteText.className = "note-card-text";
         noteText.textContent = note.text;
 
+        const noteFooter = document.createElement("div");
+        noteFooter.className = "note-card-footer";
+
         const noteDate = document.createElement("time");
         noteDate.className = "note-card-date";
         noteDate.dateTime = note.createdAt;
         noteDate.textContent = formatNoteDate(note.createdAt);
 
-        noteItem.append(noteText, noteDate);
+        const deleteButton = document.createElement("button");
+        deleteButton.className = "note-card-delete";
+        deleteButton.type = "button";
+        deleteButton.dataset.noteDelete = note.id;
+        deleteButton.textContent = "Eliminar";
+
+        noteFooter.append(noteDate, deleteButton);
+        noteItem.append(noteText, noteFooter);
         notesList.appendChild(noteItem);
     });
 }
